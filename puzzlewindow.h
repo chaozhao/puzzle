@@ -1,49 +1,35 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef PUZZLEWINDOW_H
+#define PUZZLEWINDOW_H
 
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QtGui>
 #include <QtCore>
-//#include <QTimer>
-
+#include "board.h"
 
 namespace Ui {
-class MainWindow;
+class PuzzleWindow;
 }
 
-class MainWindow : public QMainWindow
+class PuzzleWindow : public QMainWindow
 {
     Q_OBJECT
     
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-    
+    explicit PuzzleWindow(QWidget *parent = 0);
+    ~PuzzleWindow();
+    unsigned getNumberofMisplacedTile(Board testBoard,Board goalBoard);
+    void drawPuzzle();
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
-
-
+    void on_pushButton_3_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::PuzzleWindow *ui;
     QGraphicsScene *scene;
     QGraphicsRectItem *rec;
-    QPixmap *num1;
-    QPixmap *num2;
-    QPixmap *num3;
-    QPixmap *num4;
-    QPixmap *num5;
-    QPixmap *num6;
-    QPixmap *num7;
-    QPixmap *num8;
-    QTimer *timer;
-
-
-
 };
 
-#endif // MAINWINDOW_H
+#endif // PUZZLEWINDOW_H

@@ -11,10 +11,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    tile.cpp
+    tile.cpp \
+    board.cpp \
+    search.cpp \
+    dfs.cpp \
+    dimension.cpp \
+    puzzlewindow.cpp
 
-HEADERS  += mainwindow.h \
-    tile.h
+HEADERS  += \
+    tile.h \
+    board.h \
+    search.h \
+    dfs.h \
+    dimension.h \
+    puzzlewindow.h
 
 FORMS    += mainwindow.ui

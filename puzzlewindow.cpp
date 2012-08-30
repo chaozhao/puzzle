@@ -1,61 +1,67 @@
-#include "mainwindow.h"
+#include "puzzlewindow.h"
 #include "ui_mainwindow.h"
 #include <QtDebug>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+PuzzleWindow::PuzzleWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::PuzzleWindow)
 {
     ui->setupUi(this);
     QBrush red(Qt::red);
     QPen black(Qt::black);
     black.setWidth(10);
     scene = new QGraphicsScene(this);
-    scene->setSceneRect(200,200,10,10);
+    scene->setSceneRect(0,0,100,100);
     ui->graphicsView->setScene(scene);
 
-    timer = new QTimer(this);
+   /*timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),scene,SLOT(advance()));
     timer->start(100);
-
-    num1 = new QPixmap(".\\image\\test.jpg");
-    scene->addPixmap(*num1);
-    rec = scene->addRect(10,10,100,100,black,red);
-
-    /*
-     num2 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-      num3 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-       num4 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-        num5 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-         num6 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-          num7 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-           num8 = new QPixmap("C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg");
-
-
-    scene->addPixmap(*num2);
-    scene->addPixmap(*num3);
-    scene->addPixmap(*num4);
-    scene->addPixmap(*num5);
-    scene->addPixmap(*num6);
-    scene->addPixmap(*num7);
-    scene->addPixmap(*num8);
-
 */
+    rec = scene->addRect(0,0,100,100,black,red);
 
-
+    Board *aBoard = new Board();
+    aBoard->setInitState();
+    delete aBoard;
 }
 
-MainWindow::~MainWindow()
+PuzzleWindow::~PuzzleWindow()
 {
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+unsigned PuzzleWindow::getNumberofMisplacedTile(Board testBoard, Board goalBoard)
+{
+    Dimension theDimension;
+    theDimension = testBoard.getDimension();
+    unsigned ROWS = theDimension.getRow();
+    unsigned COLS = theDimension.getCol();
+
+    unsigned start = 1;
+    unsigned counter =0;
+    for(unsigned i = 0;i < ROWS;++i)
+    {
+          for(unsigned j = 0;j < COLS;++j)
+          {
+              //if(start != testBoard[i][j].getNumber())
+              {
+                  counter++;
+              }
+              start++;
+          }
+    }
+    return counter;
+}
+
+void PuzzleWindow::on_pushButton_clicked()
 {
    rec->setPos(50,50);
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void PuzzleWindow::on_pushButton_2_clicked()
 {
     rec->setPos(30,30);
+}
+
+void PuzzleWindow::on_pushButton_3_clicked()
+{
+
 }

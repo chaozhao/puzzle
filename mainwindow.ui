@@ -30,10 +30,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>420</y>
-      <width>158</width>
-      <height>25</height>
+      <x>60</x>
+      <y>410</y>
+      <width>401</width>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -51,20 +51,14 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+     </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>420</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Exit</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -93,8 +87,8 @@
      <y>449</y>
     </hint>
     <hint type="destinationlabel">
-     <x>496</x>
-     <y>448</y>
+     <x>505</x>
+     <y>501</y>
     </hint>
    </hints>
   </connection>
