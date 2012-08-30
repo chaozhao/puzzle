@@ -1,2 +1,6 @@
 \debug
 \image
+Makefile
+Makefile.Debug
+Makefile.Release
+puzzle.pro.user
