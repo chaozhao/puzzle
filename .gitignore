@@ -1,6 +1,22 @@
-\debug
-\image
+/debug
+/release
+/image
+
 Makefile
 Makefile.Debug
 Makefile.Release
 puzzle.pro.user
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
